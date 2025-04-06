@@ -32,7 +32,6 @@ class UserServiceSimpleTest {
 	 
 	@Test
 	@DisplayName("Valid email should pass")
-	@Order(1)
 	void testValidEmail() {
 		assertAll(
 				() -> assertTrue(s.isValidEmail("test@example.com")),
@@ -42,7 +41,6 @@ class UserServiceSimpleTest {
 	
 	@Test
 	@DisplayName("Invalid email should fail")
-	@Order(2)
 	void testInvalidEmail() {
 		assertAll(
 				() -> assertFalse(s.isValidEmail(null)),
@@ -59,7 +57,6 @@ class UserServiceSimpleTest {
         "admin,,false"
     })
     @DisplayName("Authentication scenarios")
-	@Order(3)
     void testAuthentication(String username, String password, boolean expected) {
         assertEquals(expected, s.authenticate(username, password));
     }
@@ -67,7 +64,6 @@ class UserServiceSimpleTest {
     @Test
     @Timeout(value = 300, unit = TimeUnit.MILLISECONDS)
     @DisplayName("Timeout test for email validation")
-    @Order(4)
     void testEmailTimeout() {
         assertTrue(s.isValidEmail("fast@test.com"));
     }
@@ -75,7 +71,6 @@ class UserServiceSimpleTest {
     @Test
     @Disabled()
     @DisplayName("Failing test")
-    @Order(5)
     void testFailingEmail() {
         assertFalse(s.isValidEmail("admin@mail.com")); // will fail, it's a valid email
     } 
