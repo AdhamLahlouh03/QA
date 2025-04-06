@@ -81,11 +81,11 @@ public class ProductTest {
 		assertEquals(100, p.getPrice());
 	}
 	
-//	@Test
-//	@DisplayName("test getDicount method")
-//	@Order(8)
-//	void testGetDiscount() {
-//		assertEquals(15, p.getDiscount());
-//	}
+	@Test
+	@DisplayName("test getDicount method")
+	@Order(8)
+	void testGetDiscount() {
+		assertEquals(0, p.getDiscount());
+	}
 
 }
